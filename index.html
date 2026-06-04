@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+    <title>WayBet</title>
+  </head>
+  <body>
+    <header>
+      <div id="top-header" class="flex-container">
+        <img src="Icons/Flag_of_Botswana.svg" />
+        <a href="">WayBet</a>
+        <button>Login</button>
+        <button>Sign Up</button>
+        <a href=""><img src="Icons/chat.svg" /></a>
+        <a href=""><img src="Icons/search.svg" /></a>
+      </div>
+      <div id="bottom-header" class="flex-container">
+        <div class="icon-container">
+          <a href="">
+            <img src="Icons/home.svg" />
+            <p>home</p>
+          </a>
+        </div>
+        <div class="icon-container">
+          <a href="">
+            <img src="Icons/casino.svg" alt="" />
+            <p>casino</p>
+          </a>
+        </div>
+        <div class="icon-container">
+          <a href="">
+            <img src="Icons/plane.svg" />
+            <p>aviator</p>
+          </a>
+        </div>
+      </div>
+    </header>
+    <p>Multiplier: <span id="multiplier">1.00</span></p>
+    <canvas id="gameCanvas" height="400" width="1000"></canvas>
+  </body>
+</html>
