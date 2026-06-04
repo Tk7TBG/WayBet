@@ -5,7 +5,7 @@ let balance = 1000.0;
 let currentBet = 0;
 let targetCrashPoint = 0;
 let hasCashedOut = false;
-let gameState = "waiting"; // waiting, flying, crashed
+let gameState = "waiting";
 let animationId;
 let currentMultiplier = 1.0;
 let timeElapsed = 0;
@@ -45,3 +45,13 @@ function drawFrame() {
 }
 
 requestAnimationFrame(drawFrame);
+
+function handleAction() {
+  if (gameState === "waiting") {
+    placeBet();
+  } else if (gameState === "flying" && !hasCashedOut && currentBet > 0) {
+    handleCashOut();
+  }
+}
+function placeBet() {}
+function handleCashOut() {}
