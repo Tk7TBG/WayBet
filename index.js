@@ -1,6 +1,12 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
+let balance = 1000.0;
+let currentBet = 0;
+let targetCrashPoint = 0;
+let hasCashedOut = false;
+let gameState = "waiting"; // waiting, flying, crashed
+let animationId;
 let currentMultiplier = 1.0;
 let timeElapsed = 0;
 
