@@ -78,3 +78,7 @@ function handleCashOut() {}
 function updateBalanceUI() {
   balanceText.textContent = balance;
 }
+
+function startWaitingPhase() {}
+function initiateRound() {}
+function triggerCrash() {}
