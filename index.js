@@ -61,5 +61,8 @@ function placeBet() {
   } else if (bet <= 0) {
     alert("Invalid bet: Bet cannot be less than 0");
   }
+
+  balance -= bet;
+  currentBet = bet;
 }
 function handleCashOut() {}
