@@ -1,7 +1,8 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const betInput = document.getElementById("betAmount");
-const balanceElement = document.getElementById("balance");
+const balanceText = document.getElementById("balance");
+const actionBtn = document.getElementById("actionBtn");
 
 let balance = 1000.0;
 let currentBet = 0;
@@ -66,9 +67,12 @@ function placeBet() {
   balance -= bet;
   currentBet = bet;
   updateBalanceUI();
+
+  actionBtn.innerText = "BET PLACED (WAITING)";
+  actionBtn.disabled = true;
 }
 function handleCashOut() {}
 
 function updateBalanceUI() {
-  balanceElement.textContent = balance;
+  balanceText.textContent = balance;
 }
