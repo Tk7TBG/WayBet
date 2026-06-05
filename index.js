@@ -42,6 +42,8 @@ function drawFrame() {
 
   multiplier_text.textContent = currentMultiplier;
 
+  handleAction();
+
   requestAnimationFrame(drawFrame);
 }
 
@@ -56,9 +58,7 @@ function handleAction() {
 }
 function placeBet() {
   let bet = Number(betInput.value);
-  if (isNaN(bet)) {
-    alert("Invalid bet: Bet has to be a number");
-  } else if (bet <= 0) {
+  if (bet <= 0) {
     alert("Invalid bet: Bet cannot be less than 0");
   }
 
