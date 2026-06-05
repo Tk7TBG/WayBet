@@ -1,5 +1,6 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
+const betInput = document.getElementById("betAmount");
 
 let balance = 1000.0;
 let currentBet = 0;
@@ -53,5 +54,12 @@ function handleAction() {
     handleCashOut();
   }
 }
-function placeBet() {}
+function placeBet() {
+  let bet = Number(betInput.value);
+  if (isNaN(bet)) {
+    alert("Invalid bet: Bet has to be a number");
+  } else if (bet <= 0) {
+    alert("Invalid bet: Bet cannot be less than 0");
+  }
+}
 function handleCashOut() {}
