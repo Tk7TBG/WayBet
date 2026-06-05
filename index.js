@@ -9,7 +9,7 @@ let balance = 1000.0;
 let currentBet = 0;
 let targetCrashPoint = 0;
 let hasCashedOut = false;
-let gameState = "waiting";
+let gameState = "waiting"; // waiting, flying, crashed
 let animationId;
 let currentMultiplier = 1.0;
 let timeElapsed = 0;
@@ -17,6 +17,8 @@ let timeElapsed = 0;
 const multiplier_text = document.getElementById("multiplier");
 
 function drawFrame() {
+  if (gameState !== "flying") return;
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // 1. Setting up exponential multiplier for each frame step
@@ -45,10 +47,8 @@ function drawFrame() {
 
   multiplier_text.textContent = currentMultiplier;
 
-  requestAnimationFrame(drawFrame);
+  animationId = requestAnimationFrame(drawFrame);
 }
-
-requestAnimationFrame(drawFrame);
 
 function handleAction() {
   if (gameState === "waiting") {
