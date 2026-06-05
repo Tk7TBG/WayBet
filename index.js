@@ -1,3 +1,5 @@
+const { act } = require("react");
+
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const betInput = document.getElementById("betAmount");
@@ -79,6 +81,30 @@ function updateBalanceUI() {
   balanceText.textContent = balance;
 }
 
-function startWaitingPhase() {}
-function initiateRound() {}
-function triggerCrash() {}
+function startWaitingPhase() {
+  gameState = "waiting";
+
+  // Reset everything. Clear canvas, reset values.
+  // Clear canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Reset multiplier
+  timeElapsed = 0;
+  currentMultiplier = 0;
+
+  // Enable action button
+  actionBtn.innerText = "PLACE BET";
+  actionBtn.disabled = false;
+  statusText.innerText = "WAITING FOR NEXT ROUND";
+
+  // Automatically start round after 4 seconds
+  setTimeout(initiateRound, 4000);
+}
+function initiateRound() {
+  gameState = "flying";
+}
+function triggerCrash() {
+  gameState = "crashed";
+}
+
+startWaitingPhase();
