@@ -1,6 +1,7 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const betInput = document.getElementById("betAmount");
+const balanceElement = document.getElementById("balance");
 
 let balance = 1000.0;
 let currentBet = 0;
@@ -42,8 +43,6 @@ function drawFrame() {
 
   multiplier_text.textContent = currentMultiplier;
 
-  handleAction();
-
   requestAnimationFrame(drawFrame);
 }
 
@@ -68,4 +67,6 @@ function placeBet() {
 }
 function handleCashOut() {}
 
-function updateBalanceUI() {}
+function updateBalanceUI() {
+  balanceElement.textContent = balance;
+}
