@@ -61,7 +61,7 @@ function handleAction() {
 function placeBet() {
   let bet = Number(betInput.value);
   if (bet <= 0) {
-    alert("Invalid bet: Bet cannot be less than 0");
+    alert("Invalid bet: Bet cannot be less than or equal to 0");
   } else if (bet > balance) {
     alert("Invalid bet: Bet can't be greater than balance");
   }
@@ -98,7 +98,7 @@ function startWaitingPhase() {
   statusText.innerText = "WAITING FOR NEXT ROUND";
   */
   // Automatically start round after 4 seconds
-  setTimeout(initiateRound, 4000);
+  setTimeout(initiateRound, 10000);
 }
 
 function initiateRound() {
@@ -113,13 +113,14 @@ function initiateRound() {
   timeElapsed = 0;
   currentMultiplier = 1.0;
 
+  // Separates active bettors from spectators
   if (currentBet > 0) {
     actionBtn.disabled = false;
     actionBtn.classList.add("cashout");
-    actionBtn.textContent = "Current bet > 0";
+    actionBtn.textContent = "CASHOUT";
   } else {
     actionBtn.disabled = true;
-    actionBtn.textContent = "Current bet < 0";
+    actionBtn.textContent = "Spectating";
   }
 
   animationId = requestAnimationFrame(drawFrame);

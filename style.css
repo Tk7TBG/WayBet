@@ -23,3 +23,7 @@ header {
 img {
   height: 40px;
 }
+
+#actionBtn.cashout {
+  background-color: #ff9900; /* Orange for cashing out */
+}
