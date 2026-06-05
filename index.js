@@ -59,6 +59,8 @@ function placeBet() {
   let bet = Number(betInput.value);
   if (bet <= 0) {
     alert("Invalid bet: Bet cannot be less than 0");
+  } else if (bet > balance) {
+    alert("Invalid bet: Bet can't be greater than balance");
   }
 
   balance -= bet;
