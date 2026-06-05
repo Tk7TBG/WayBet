@@ -64,5 +64,8 @@ function placeBet() {
 
   balance -= bet;
   currentBet = bet;
+  updateBalanceUI();
 }
 function handleCashOut() {}
+
+function updateBalanceUI() {}
