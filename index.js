@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 const betInput = document.getElementById("betAmount");
 const balanceText = document.getElementById("balance");
 const actionBtn = document.getElementById("actionBtn");
+const statusText = document.getElementById("statusText");
 
 let balance = 1000.0;
 let currentBet = 0;
@@ -70,6 +71,7 @@ function placeBet() {
 
   actionBtn.innerText = "BET PLACED (WAITING)";
   actionBtn.disabled = true;
+  statusText.innerText = "READY FOR TAKEOFF...";
 }
 function handleCashOut() {}
 
