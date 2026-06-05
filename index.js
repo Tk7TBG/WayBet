@@ -4,6 +4,7 @@ const betInput = document.getElementById("betAmount");
 const balanceText = document.getElementById("balance");
 const actionBtn = document.getElementById("actionBtn");
 const statusText = document.getElementById("statusText");
+const targetMultiplierText = document.getElementById("targetMultiplier");
 
 let balance = 1000.0;
 let currentBet = 0;
@@ -106,6 +107,7 @@ function initiateRound() {
   // Calculating crash Point
   let rand = Math.pow(Math.random(), 0.5);
   targetMultiplier = Math.max(1.0, parseFloat((0.98 / (1 - rand)).toFixed(2)));
+  targetMultiplierText.textContent = targetMultiplier;
 
   hasCashedOut = false;
   timeElapsed = 0;
