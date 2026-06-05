@@ -1,5 +1,3 @@
-const { act } = require("react");
-
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const betInput = document.getElementById("betAmount");
@@ -89,19 +87,39 @@ function startWaitingPhase() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // Reset multiplier
-  timeElapsed = 0;
-  currentMultiplier = 0;
+  //timeElapsed = 0;
+  //currentMultiplier = 0;
 
   // Enable action button
+  /*
   actionBtn.innerText = "PLACE BET";
   actionBtn.disabled = false;
   statusText.innerText = "WAITING FOR NEXT ROUND";
-
+  */
   // Automatically start round after 4 seconds
-  setTimeout(initiateRound, 4000);
+  setTimeout(initiateRound, 10000);
 }
 function initiateRound() {
   gameState = "flying";
+
+  // Calculating crash Point
+  let rand = Math.pow(Math.random(), 0.5);
+  targetCrashPoint = Math.max(1.0, parseFloat((0.98 / (1 - rand)).toFixed(2)));
+
+  hasCashedOut = false;
+  timeElapsed = 0;
+  currentMultiplier = 1.0;
+
+  if (currentBet > 0) {
+    actionBtn.disabled = false;
+    actionBtn.classList.add("cashout");
+    actionBtn.textContent = "Current bet > 0";
+  } else {
+    actionBtn.disabled = true;
+    actionBtn.textContent = "Current bet < 0";
+  }
+
+  animationId = requestAnimationFrame(drawFrame);
 }
 function triggerCrash() {
   gameState = "crashed";
