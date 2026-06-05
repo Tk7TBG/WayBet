@@ -7,7 +7,7 @@ const statusText = document.getElementById("statusText");
 
 let balance = 1000.0;
 let currentBet = 0;
-let targetCrashPoint = 0;
+let targetMultiplier = 0;
 let hasCashedOut = false;
 let gameState = "waiting"; // waiting, flying, crashed
 let animationId;
@@ -97,14 +97,15 @@ function startWaitingPhase() {
   statusText.innerText = "WAITING FOR NEXT ROUND";
   */
   // Automatically start round after 4 seconds
-  setTimeout(initiateRound, 10000);
+  setTimeout(initiateRound, 4000);
 }
+
 function initiateRound() {
   gameState = "flying";
 
   // Calculating crash Point
   let rand = Math.pow(Math.random(), 0.5);
-  targetCrashPoint = Math.max(1.0, parseFloat((0.98 / (1 - rand)).toFixed(2)));
+  targetMultiplier = Math.max(1.0, parseFloat((0.98 / (1 - rand)).toFixed(2)));
 
   hasCashedOut = false;
   timeElapsed = 0;
