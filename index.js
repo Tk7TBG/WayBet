@@ -26,6 +26,13 @@ function drawFrame() {
   timeElapsed += 16;
   currentMultiplier = Math.pow(1.0006, timeElapsed);
 
+  // Checking if we can crash
+  if (currentMultiplier >= targetMultiplier) {
+    currentMultiplier = targetMultiplier;
+    triggerCrash();
+    return;
+  }
+
   // 2. Converting abstract values (time elapsed and current multiplier) to pixel coordinates x & y
   let x = canvas.width * 0.5;
   let y = canvas.height - (currentMultiplier - 1) * 50;
@@ -125,8 +132,11 @@ function initiateRound() {
 
   animationId = requestAnimationFrame(drawFrame);
 }
+
 function triggerCrash() {
   gameState = "crashed";
+
+  setTimeout(startWaitingPhase, 10000);
 }
 
 startWaitingPhase();
