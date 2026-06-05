@@ -24,7 +24,7 @@ function drawFrame() {
 
   // 1. Setting up exponential multiplier for each frame step
   timeElapsed += 16;
-  currentMultiplier = Math.pow(1.0006, timeElapsed);
+  currentMultiplier = Math.pow(1.0006, timeElapsed).toFixed(2);
 
   // Checking if we can crash
   if (currentMultiplier >= targetMultiplier) {
@@ -135,6 +135,7 @@ function initiateRound() {
 
 function triggerCrash() {
   gameState = "crashed";
+  //cancelAnimationFrame(animationId);
 
   setTimeout(startWaitingPhase, 10000);
 }
