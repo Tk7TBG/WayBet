@@ -25,7 +25,7 @@ function drawFrame() {
 
   // 1. Setting up exponential multiplier for each frame step
   timeElapsed += 16;
-  currentMultiplier = Math.pow(1.0006, timeElapsed).toFixed(2);
+  currentMultiplier = Math.pow(1.00006, timeElapsed).toFixed(2);
   estimatedWinningsText.textContent = (currentMultiplier * currentBet).toFixed(
     2,
   );
