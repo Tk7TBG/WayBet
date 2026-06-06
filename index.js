@@ -5,6 +5,7 @@ const balanceText = document.getElementById("balance");
 const actionBtn = document.getElementById("actionBtn");
 const statusText = document.getElementById("statusText");
 const targetMultiplierText = document.getElementById("targetMultiplier");
+const estimatedWinningsText = document.getElementById("Estimated Winnings");
 
 let balance = 1000.0;
 let currentBet = 0;
@@ -15,7 +16,7 @@ let animationId;
 let currentMultiplier = 1.0;
 let timeElapsed = 0;
 
-const multiplier_text = document.getElementById("multiplier");
+const multiplierText = document.getElementById("multiplier");
 
 function drawFrame() {
   if (gameState !== "flying") return;
@@ -29,6 +30,8 @@ function drawFrame() {
   // Checking if we can crash
   if (currentMultiplier >= targetMultiplier) {
     currentMultiplier = targetMultiplier;
+    multiplierText.textContent = currentMultiplier;
+    es;
     triggerCrash();
     return;
   }
@@ -53,7 +56,7 @@ function drawFrame() {
   ctx.fillStyle = "#ff0000";
   ctx.fillRect(x - 10, y - 10, 20, 20);
 
-  multiplier_text.textContent = currentMultiplier;
+  multiplierText.textContent = currentMultiplier;
 
   animationId = requestAnimationFrame(drawFrame);
 }
@@ -65,6 +68,7 @@ function handleAction() {
     handleCashOut();
   }
 }
+
 function placeBet() {
   let bet = Number(betInput.value);
   if (bet <= 0) {
