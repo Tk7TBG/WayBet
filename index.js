@@ -30,6 +30,7 @@ function drawFrame() {
   if (!hasCashedOut && currentBet > 0) {
     let estimatedWinnings = (currentMultiplier * currentBet).toFixed(2);
     estimatedWinningsText.textContent = estimatedWinnings;
+    actionBtn.textContent = `CASH OUT BWP  ${estimatedWinnings}`;
   }
 
   // Checking if we can crash
@@ -110,6 +111,7 @@ function startWaitingPhase() {
 
   // Reset multiplier
   //timeElapsed = 0;
+  currentBet = 0;
   multiplierText.textContent = "1.00";
   estimatedWinningsText.textContent = "";
 
@@ -151,6 +153,8 @@ function initiateRound() {
 function triggerCrash() {
   gameState = "crashed";
   cancelAnimationFrame(animationId);
+
+  multiplierText.textContent += " FLEW AWAY";
 
   actionBtn.classList.remove("cashout");
   actionBtn.disabled = true;
