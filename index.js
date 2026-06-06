@@ -5,7 +5,7 @@ const balanceText = document.getElementById("balance");
 const actionBtn = document.getElementById("actionBtn");
 const statusText = document.getElementById("statusText");
 const targetMultiplierText = document.getElementById("targetMultiplier");
-const estimatedWinningsText = document.getElementById("Estimated Winnings");
+const estimatedWinningsText = document.getElementById("estimatedWinnings");
 
 let balance = 1000.0;
 let currentBet = 0;
@@ -26,12 +26,15 @@ function drawFrame() {
   // 1. Setting up exponential multiplier for each frame step
   timeElapsed += 16;
   currentMultiplier = Math.pow(1.0006, timeElapsed).toFixed(2);
+  estimatedWinningsText.textContent = (currentMultiplier * currentBet).toFixed(
+    2,
+  );
 
   // Checking if we can crash
   if (currentMultiplier >= targetMultiplier) {
     currentMultiplier = targetMultiplier;
     multiplierText.textContent = currentMultiplier;
-    es;
+    estimatedWinningsText.textContent = "0";
     triggerCrash();
     return;
   }
