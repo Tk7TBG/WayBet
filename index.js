@@ -77,6 +77,7 @@ function handleAction() {
 
 function placeBet() {
   let bet = Number(betInput.value);
+
   if (bet <= 0) {
     alert("Invalid bet: Bet cannot be less than or equal to 0");
   } else if (bet > balance) {
@@ -99,7 +100,7 @@ function handleCashOut() {
 }
 
 function updateBalanceUI() {
-  balanceText.textContent = balance;
+  balanceText.textContent = balance.toFixed(2);
 }
 
 function startWaitingPhase() {
