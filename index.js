@@ -25,7 +25,7 @@ function drawFrame() {
 
   // 1. Setting up exponential multiplier for each frame step
   timeElapsed += 16;
-  currentMultiplier = Math.pow(1.00006, timeElapsed).toFixed(2);
+  currentMultiplier = Math.pow(1.0001, timeElapsed).toFixed(2);
   estimatedWinningsText.textContent = (currentMultiplier * currentBet).toFixed(
     2,
   );
@@ -124,7 +124,7 @@ function initiateRound() {
   gameState = "flying";
 
   // Calculating crash Point
-  let rand = Math.pow(Math.random(), 0.5);
+  let rand = Math.pow(Math.random(), 0.3);
   targetMultiplier = Math.max(1.0, parseFloat((0.98 / (1 - rand)).toFixed(2)));
   targetMultiplierText.textContent = targetMultiplier;
 
