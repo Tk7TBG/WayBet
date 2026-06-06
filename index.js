@@ -111,6 +111,7 @@ function startWaitingPhase() {
   // Reset multiplier
   //timeElapsed = 0;
   multiplierText.textContent = "1.00";
+  estimatedWinningsText.textContent = "";
 
   // Enable action button
 
