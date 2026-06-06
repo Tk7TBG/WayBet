@@ -106,13 +106,13 @@ function startWaitingPhase() {
   //currentMultiplier = 0;
 
   // Enable action button
-  /*
+
   actionBtn.innerText = "PLACE BET";
   actionBtn.disabled = false;
   statusText.innerText = "WAITING FOR NEXT ROUND";
-  */
+
   // Automatically start round after 4 seconds
-  setTimeout(initiateRound, 10000);
+  setTimeout(initiateRound, 4000);
 }
 
 function initiateRound() {
@@ -147,7 +147,7 @@ function triggerCrash() {
   actionBtn.classList.remove("cashout");
   actionBtn.disabled = true;
 
-  setTimeout(startWaitingPhase, 10000);
+  setTimeout(startWaitingPhase, 4000);
 }
 
 startWaitingPhase();
