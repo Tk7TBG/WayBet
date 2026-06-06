@@ -99,6 +99,10 @@ function handleCashOut() {
   let winnings = currentBet * currentMultiplier;
   balance += winnings;
   updateBalanceUI();
+
+  actionBtn.textContent = `WON BWP ${winnings.toFixed(2)}`;
+  actionBtn.classList.remove("cashout");
+  actionBtn.disabled = true;
 }
 
 function updateBalanceUI() {
