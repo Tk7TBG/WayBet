@@ -25,15 +25,18 @@ function drawFrame() {
 
   // 1. Setting up exponential multiplier for each frame step
   timeElapsed += 16;
-  currentMultiplier = Math.pow(1.0001, timeElapsed).toFixed(2);
-  let estimatedWinnings = (currentMultiplier * currentBet).toFixed(2);
-  estimatedWinningsText.textContent = estimatedWinnings;
+  currentMultiplier = Math.pow(1.0004, timeElapsed).toFixed(2);
+
+  if (!hasCashedOut && currentBet > 0) {
+    let estimatedWinnings = (currentMultiplier * currentBet).toFixed(2);
+    estimatedWinningsText.textContent = estimatedWinnings;
+  }
 
   // Checking if we can crash
   if (currentMultiplier >= targetMultiplier) {
     currentMultiplier = targetMultiplier;
     multiplierText.textContent = currentMultiplier;
-    estimatedWinningsText.textContent = "0";
+    //estimatedWinningsText.textContent = "0";
     triggerCrash();
     return;
   }
