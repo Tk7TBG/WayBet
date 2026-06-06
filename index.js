@@ -88,7 +88,12 @@ function placeBet() {
   actionBtn.disabled = true;
   statusText.innerText = "READY FOR TAKEOFF...";
 }
-function handleCashOut() {}
+function handleCashOut() {
+  hasCashedOut = true;
+  let winnings = currentBet * currentMultiplier;
+  balance += winnings;
+  updateBalanceUI();
+}
 
 function updateBalanceUI() {
   balanceText.textContent = balance;
