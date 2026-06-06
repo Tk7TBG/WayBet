@@ -134,7 +134,7 @@ function initiateRound() {
     actionBtn.textContent = "CASHOUT";
   } else {
     actionBtn.disabled = true;
-    actionBtn.textContent = "Spectating";
+    actionBtn.textContent = "Waiting for next round";
   }
 
   animationId = requestAnimationFrame(drawFrame);
@@ -142,7 +142,10 @@ function initiateRound() {
 
 function triggerCrash() {
   gameState = "crashed";
-  //cancelAnimationFrame(animationId);
+  cancelAnimationFrame(animationId);
+
+  actionBtn.classList.remove("cashout");
+  actionBtn.disabled = true;
 
   setTimeout(startWaitingPhase, 10000);
 }
