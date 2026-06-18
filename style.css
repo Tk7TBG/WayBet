@@ -1,6 +1,7 @@
 body {
   margin: 0;
 }
+
 header {
   background-color: grey;
 }
@@ -26,4 +27,16 @@ img {
 
 #actionBtn.cashout {
   background-color: #ff9900; /* Orange for cashing out */
+}
+
+.game-container {
+  position: relative;
+  height: 400px;
+  width: 800px;
+}
+
+.ui-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
