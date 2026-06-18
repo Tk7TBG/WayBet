@@ -16,7 +16,7 @@ let animationId;
 let currentMultiplier = 1.0;
 let timeElapsed = 0;
 
-const multiplierText = document.getElementById("multiplier");
+const multiplierText = document.getElementById("multiplierText");
 
 function drawFrame() {
   if (gameState !== "flying") return;
