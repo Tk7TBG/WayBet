@@ -33,10 +33,23 @@ img {
   position: relative;
   height: 400px;
   width: 800px;
+  border: red 1px solid;
 }
 
 .ui-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+.game {
+  border: blue 1px solid;
+}
+
+.debug-view {
+  border: brown 1px solid;
+}
+
+.controls {
+  border: purple 1px solid;
 }
