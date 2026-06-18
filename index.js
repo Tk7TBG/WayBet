@@ -117,6 +117,9 @@ function startWaitingPhase() {
   // Clear canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  ctx.fillStyle = "#ff0000";
+  let startY = canvas.height - 20;
+  ctx.fillRect(0, startY, 20, 20);
   // Reset multiplier
   //timeElapsed = 0;
   currentBet = 0;
