@@ -17,6 +17,7 @@ let currentMultiplier = 1.0;
 let timeElapsed = 0;
 
 const multiplierText = document.getElementById("multiplierText");
+const gameStateText = document.getElementById("gameStateText");
 
 function drawFrame() {
   if (gameState !== "flying") return;
@@ -111,7 +112,7 @@ function updateBalanceUI() {
 
 function startWaitingPhase() {
   gameState = "waiting";
-
+  gameStateText.textContent = "Waiting";
   // Reset everything. Clear canvas, reset values.
   // Clear canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -134,7 +135,7 @@ function startWaitingPhase() {
 
 function initiateRound() {
   gameState = "flying";
-
+  gameStateText.textContent = "Flying";
   // Calculating crash Point
   let rand = Math.pow(Math.random(), 0.3);
   targetMultiplier = Math.max(1.0, parseFloat((0.98 / (1 - rand)).toFixed(2)));
@@ -159,6 +160,7 @@ function initiateRound() {
 
 function triggerCrash() {
   gameState = "crashed";
+  gameStateText.textContent = "Crashed";
   cancelAnimationFrame(animationId);
 
   multiplierText.textContent += " FLEW AWAY";
