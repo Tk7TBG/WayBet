@@ -39,15 +39,22 @@
       </div>
     </header>
 
-    <p>Multiplier: <span id="multiplier">1.00</span></p>
-    <div id="statusText">WAITING FOR NEXT ROUND</div>
-    <p>Target Multiplier: <span id="targetMultiplier"></span></p>
-    <p>Estimated Winnings: <span id="estimatedWinnings"></span></p>
-    <p>
-      Bet: <input type="number" id="betAmount" value="10" min="0" step="0.01" />
-    </p>
-    <p>Balance: <span id="balance">1000</span>BWP</p>
-    <canvas id="gameCanvas" height="400" width="800"></canvas>
-    <button id="actionBtn" onclick="handleAction()">PLACE BET</button>
+    <div class="game">
+      <div class="game-container">
+        <canvas id="gameCanvas" height="400" width="800"></canvas>
+        <p>Multiplier: <span id="multiplier">1.00</span></p>
+        <div id="statusText">WAITING FOR NEXT ROUND</div>
+        <p>Target Multiplier: <span id="targetMultiplier"></span></p>
+        <p>Estimated Winnings: <span id="estimatedWinnings"></span></p>
+      </div>
+      <div class="controls">
+        <p>
+          Bet:
+          <input type="number" id="betAmount" value="10" min="0" step="0.01" />
+        </p>
+        <p>Balance: <span id="balance">1000</span>BWP</p>
+        <button id="actionBtn" onclick="handleAction()">PLACE BET</button>
+      </div>
+    </div>
   </body>
 </html>
