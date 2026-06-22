@@ -61,3 +61,8 @@ img {
 .controls {
   border: green 3px solid;
 }
+
+.controls,
+.debug-view {
+  width: 800px;
+}
