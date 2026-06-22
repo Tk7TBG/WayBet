@@ -111,3 +111,17 @@ button {
 #actionBtn.cashout {
   background-color: #ff9900; /* Orange for cashing out */
 }
+
+.stats {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 5px;
+  text-align: center;
+  width: 100px;
+  font-size: 18px;
+}
