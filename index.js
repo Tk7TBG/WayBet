@@ -44,7 +44,9 @@ function drawFrame() {
   }
 
   // 2. Converting abstract values (time elapsed and current multiplier) to pixel coordinates x & y
-  let x = canvas.width * 0.5;
+  let horizontalProgress = timeElapsed / 3000;
+
+  let x = horizontalProgress * (canvas.width * 0.8); // To make horizontal move instead of static
   let y = canvas.height - (currentMultiplier - 1) * 50;
 
   // 3. Limit the height and width of the plane so it doesn't leave canvas before crashing
