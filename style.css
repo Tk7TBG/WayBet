@@ -25,10 +25,6 @@ img {
   height: 40px;
 }
 
-#actionBtn.cashout {
-  background-color: #ff9900; /* Orange for cashing out */
-}
-
 .game-container {
   position: relative;
   height: 400px;
@@ -104,4 +100,14 @@ button {
   border-radius: 5px;
   cursor: pointer;
   text-transform: uppercase;
+}
+
+#actionBtn {
+  color: white;
+  background-color: #28a745;
+  width: 300px;
+}
+
+#actionBtn.cashout {
+  background-color: #ff9900; /* Orange for cashing out */
 }
