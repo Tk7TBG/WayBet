@@ -41,6 +41,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   border: yellowgreen solid 3px;
+  text-align: center;
 }
 
 .game {
@@ -80,5 +81,10 @@ canvas {
   color: #fff;
   font-size: 64px;
   margin: 0;
-  text-align: center;
+}
+
+#statusText {
+  color: #aaa;
+  font-size: 24px;
+  margin-top: 10px;
 }
