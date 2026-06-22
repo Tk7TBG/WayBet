@@ -66,7 +66,6 @@ function drawFrame() {
   ctx.fillRect(x - 10, y - 10, 20, 20);
 
   multiplierText.textContent = currentMultiplier + "x";
-
   animationId = requestAnimationFrame(drawFrame);
 }
 
@@ -106,6 +105,8 @@ function handleCashOut() {
   actionBtn.textContent = `WON BWP ${winnings.toFixed(2)}`;
   actionBtn.classList.remove("cashout");
   actionBtn.disabled = true;
+
+  statusText.innerText = `Cashed out ${winnings}`;
 }
 
 function updateBalanceUI() {
@@ -132,7 +133,7 @@ function startWaitingPhase() {
 
   actionBtn.innerText = "PLACE BET";
   actionBtn.disabled = false;
-  statusText.innerText = "WAITING FOR NEXT ROUND";
+  statusText.innerText = "";
 
   // Automatically start round after 4 seconds
   setTimeout(initiateRound, 4000);
