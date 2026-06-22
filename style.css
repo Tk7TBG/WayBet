@@ -75,3 +75,9 @@ canvas {
   height: 100%;
   */
 }
+
+#multiplierText {
+  color: #fff;
+  font-size: 64px;
+  margin: 0;
+}
