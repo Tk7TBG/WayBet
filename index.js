@@ -37,7 +37,7 @@ function drawFrame() {
   // Checking if we can crash
   if (currentMultiplier >= targetMultiplier) {
     currentMultiplier = targetMultiplier;
-    multiplierText.textContent = currentMultiplier;
+    multiplierText.textContent = currentMultiplier + "x";
     //estimatedWinningsText.textContent = "0";
     triggerCrash();
     return;
@@ -65,7 +65,7 @@ function drawFrame() {
   ctx.fillStyle = "#ff0000";
   ctx.fillRect(x - 10, y - 10, 20, 20);
 
-  multiplierText.textContent = currentMultiplier;
+  multiplierText.textContent = currentMultiplier + "x";
 
   animationId = requestAnimationFrame(drawFrame);
 }
@@ -125,7 +125,7 @@ function startWaitingPhase() {
   // Reset multiplier
   //timeElapsed = 0;
   currentBet = 0;
-  multiplierText.textContent = "1.00";
+  multiplierText.textContent = "1.00x";
   estimatedWinningsText.textContent = "";
 
   // Enable action button
