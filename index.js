@@ -106,7 +106,8 @@ function handleCashOut() {
   actionBtn.classList.remove("cashout");
   actionBtn.disabled = true;
 
-  statusText.innerText = `Cashed out ${winnings}`;
+  statusText.innerText = `Cashed out BWP ${winnings}`;
+  statusText.style.color = "#28a745";
 }
 
 function updateBalanceUI() {
