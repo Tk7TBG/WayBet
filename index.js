@@ -144,6 +144,8 @@ function startWaitingPhase() {
 function initiateRound() {
   gameState = "flying";
   gameStateText.textContent = "Flying";
+
+  statusText.innerText = "";
   // Calculating crash Point
   let rand = Math.pow(Math.random(), 0.3);
   targetMultiplier = Math.max(1.0, parseFloat((0.98 / (1 - rand)).toFixed(2)));
