@@ -116,6 +116,7 @@ function updateBalanceUI() {
 function startWaitingPhase() {
   gameState = "waiting";
   gameStateText.textContent = "Waiting";
+  multiplierText.style.color = "#fff";
   // Reset everything. Clear canvas, reset values.
   // Clear canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -170,6 +171,7 @@ function triggerCrash() {
   cancelAnimationFrame(animationId);
 
   multiplierText.textContent += " FLEW AWAY";
+  multiplierText.style.color = "#e61e25";
 
   actionBtn.classList.remove("cashout");
   actionBtn.disabled = true;
