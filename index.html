@@ -10,13 +10,22 @@
   <body>
     <header>
       <div id="top-header" class="flex-container">
-        <img src="Icons/Flag_of_Botswana.svg" />
-        <a href="">WayBet</a>
-        <button>Login</button>
-        <button>Sign Up</button>
-        <a href=""><img src="Icons/chat.svg" /></a>
-        <a href=""><img src="Icons/search.svg" /></a>
+        <div class="brand">
+          <img src="Icons/Flag_of_Botswana.svg" class="flag" alt="BW" />
+          <a href="" class="logo">WayBet</a>
+        </div>
+        <div class="auth-group">
+          <button class="btn-login">Login</button>
+          <button class="btn-signup">Sign Up</button>
+        </div>
+        <div class="utility-group">
+          <a href=""><img src="Icons/chat.svg" class="icon" /></a>
+          <a href=""><img src="Icons/search.svg" class="icon" /></a>
+        </div>
       </div>
+
+      <nav id="bottom-header"></nav>
+
       <div id="bottom-header" class="flex-container">
         <div class="icon-container">
           <a href="">
