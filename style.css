@@ -1,6 +1,9 @@
 body {
   margin: 0;
   background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 header {
@@ -47,6 +50,8 @@ img {
   gap: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .debug-view {
