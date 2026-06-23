@@ -139,4 +139,42 @@ header {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+.flag {
+  height: 24px;
+  border-radius: 3px;
+}
+
+/* Auth Buttons */
+.auth-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-login,
+.btn-signup {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-login {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-signup {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.utility-group {
+  display: flex;
+  gap: 15px;
+}
 /* Bottom Header */
