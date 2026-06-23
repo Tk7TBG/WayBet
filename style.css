@@ -107,9 +107,7 @@ input {
 }
 
 /* Header Styling */
-img {
-  height: 40px;
-}
+
 header {
   background-color: #171a2d;
   border-bottom: 2px solid #333;
@@ -177,4 +175,31 @@ header {
   display: flex;
   gap: 15px;
 }
+
 /* Bottom Header */
+#bottom-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 20px;
+  background-color: #222;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.icon {
+  height: 40px;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  color: #28a745;
+}
