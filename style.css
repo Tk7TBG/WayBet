@@ -203,3 +203,11 @@ header {
 .nav-item:hover {
   color: #28a745;
 }
+
+/* Footer */
+footer {
+  background-color: #171a2d;
+  color: rgb(212, 212, 212);
+  text-align: center;
+  font-size: 18px;
+}
