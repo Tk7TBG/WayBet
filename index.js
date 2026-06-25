@@ -18,7 +18,8 @@ let timeElapsed = 0;
 
 const multiplierText = document.getElementById("multiplierText");
 const gameStateText = document.getElementById("gameStateText");
-
+const planeImage = new Image();
+planeImage.src = "Icons/plane.svg";
 function drawFrame() {
   if (gameState !== "flying") return;
 
@@ -125,6 +126,7 @@ function startWaitingPhase() {
   ctx.fillStyle = "#ff0000";
   let startY = canvas.height - 20;
   ctx.fillRect(0, startY, 20, 20);
+
   // Reset multiplier
   //timeElapsed = 0;
   currentBet = 0;
