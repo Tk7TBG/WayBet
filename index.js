@@ -19,7 +19,8 @@ let timeElapsed = 0;
 const multiplierText = document.getElementById("multiplierText");
 const gameStateText = document.getElementById("gameStateText");
 const planeImage = new Image();
-planeImage.src = "Icons/plane.svg";
+planeImage.src = "Icons/aviator-plane.svg";
+
 function drawFrame() {
   if (gameState !== "flying") return;
 
@@ -123,10 +124,9 @@ function startWaitingPhase() {
   // Clear canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#ff0000";
-  let startY = canvas.height - 20;
-  ctx.fillRect(0, startY, 20, 20);
-
+  planeImage.addEventListener("load", () => {
+    ctx.drawImage(planeImage, 0, canvas.height - 70, 70, 70);
+  });
   // Reset multiplier
   //timeElapsed = 0;
   currentBet = 0;
