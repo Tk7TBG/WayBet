@@ -64,8 +64,7 @@ function drawFrame() {
   ctx.stroke();
 
   // 5. Plane
-  ctx.fillStyle = "#ff0000";
-  ctx.fillRect(x - 10, y - 10, 20, 20);
+  ctx.drawImage(planeImage, x - 10, y - 50, 70, 70);
 
   multiplierText.textContent = currentMultiplier + "x";
   animationId = requestAnimationFrame(drawFrame);
@@ -125,7 +124,7 @@ function startWaitingPhase() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   planeImage.addEventListener("load", () => {
-    ctx.drawImage(planeImage, 0, canvas.height - 70, 70, 70);
+    ctx.drawImage(planeImage, 0, canvas.height - 60, 70, 70);
   });
   // Reset multiplier
   //timeElapsed = 0;
